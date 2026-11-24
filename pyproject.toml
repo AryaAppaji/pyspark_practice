@@ -1,0 +1,13 @@
+[project]
+name = "pyspark-practice"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [{ name = "AryaAppaji", email = "maappaji111@gmail.com" }]
+requires-python = ">=3.10"
+dependencies = [
+    "pandas>=2.3.3",
+    "pyarrow>=25.0.1",
+    "pyspark>=4.2.0",
+    "ruff>=0.16.8",
+]
