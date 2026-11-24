@@ -13,14 +13,11 @@ df = spark.read.csv("files/medical_question_bank.csv", header=True, inferSchema=
 df.show(10)
 
 # 2. Select specific columns and limit to 10 rows (keeps it as a DataFrame)
-df_subset = df.select([
-    "code",
-    "stem",
-    "question_type",
-    "difficulty_level",
-    "marks",
-    "negative_marks"
-]).limit(10)
-    
+df_subset = df.select(
+    ["code", "stem", "question_type", "difficulty_level", "marks", "negative_marks"]
+).limit(10)
+
 # 3. Write directly using PySpark's native writer (overwrites if it already exists)
-df_subset.write.mode("overwrite").csv("files/medical_question_bank_subset.csv", header=True)
+df_subset.write.mode("overwrite").csv(
+    "files/medical_question_bank_subset.csv", header=True
+)

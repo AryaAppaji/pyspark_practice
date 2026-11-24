@@ -1,4 +1,3 @@
-
 from pyspark.sql import SparkSession
 import os
 import sys
@@ -13,11 +12,7 @@ os.environ["PYSPARK_DRIVER_PYTHON"] = sys.executable
 spark = SparkSession.builder.getOrCreate()
 
 # 1. Read the source CSV file
-df = spark.read.csv(
-    "files/medical_question_bank.csv",
-    header=True,
-    inferSchema=True
-)
+df = spark.read.csv("files/medical_question_bank.csv", header=True, inferSchema=True)
 
 # 2. Inspect the DataFrame schema
 df.printSchema()
